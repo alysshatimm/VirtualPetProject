@@ -22,4 +22,27 @@ public class VirtualPet {
     public void tick() {
         hunger += 10;
     }
+
+    public void petPlay() {
+        boredom -= 5;
+        if (boredom <= 0) {
+            boredom = 0;
+        }
+    }
+
+    public void petFeed() {
+        hunger -= 5;
+        if ( hunger <= 0){
+            hunger = 0;
+        }
+    }
+
+    public void petWater() {
+       thirst -= 5;
+       if (thirst <= 0){
+           thirst = 0;
+       }
+    }
+
+
 }

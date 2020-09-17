@@ -57,10 +57,47 @@ public class VirtualPetTest {
     }
     @Test
     public void shouldPlay(){
+        //Arrangement
         VirtualPet underTest = new VirtualPet("Sally");
 
-        int result = underTest.getBoredom();
+        int initalBoredom = underTest.getBoredom();
+        //Action
+        underTest.petPlay();
+        //Assertion
+        int boredomAfterPlay = underTest.getBoredom();
 
-//        assertEquals();
+       assertEquals(initalBoredom - 5, boredomAfterPlay);
+    }
+    @Test
+    public void shouldFeed(){
+        VirtualPet underTest = new VirtualPet("George");
+
+        int initalHunger = underTest.getHunger();
+        underTest.petFeed();
+        int hungerAfterFeed = underTest.getHunger();
+
+        assertEquals(initalHunger - 5, hungerAfterFeed);
+
+    }
+    @Test
+    public void shouldWater(){
+        VirtualPet underTest = new VirtualPet("Frank");
+
+        int initalThirst = underTest.getThirst();
+        underTest.petWater();
+        int thirstAfterWater = underTest.getThirst();
+
+        assertEquals(initalThirst - 5, thirstAfterWater);
+    }
+    @Test
+    public void neverNegativeBoredom(){
+        VirtualPet underTest = new VirtualPet("Janice");
+
+        for(int i = 0; i< 1000; i++){
+            underTest.petPlay();
+        }
+        int boredom = underTest.getBoredom();
+
+        assertEquals(0  , boredom);
     }
 }
