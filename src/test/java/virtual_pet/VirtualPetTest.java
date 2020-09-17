@@ -45,4 +45,22 @@ public class VirtualPetTest {
 
         assertEquals(10, result);
     }
+    @Test
+    public void shouldTick() {
+        VirtualPet  underTest = new VirtualPet("Kendrick");
+
+        int result = underTest.getHunger();
+        underTest.tick();
+        int hungerAfterTick = underTest.getHunger();
+
+        assertEquals(result + 10, hungerAfterTick);
+    }
+    @Test
+    public void shouldPlay(){
+        VirtualPet underTest = new VirtualPet("Sally");
+
+        int result = underTest.getBoredom();
+
+//        assertEquals();
+    }
 }
