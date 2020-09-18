@@ -2,8 +2,7 @@ package virtual_pet;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class VirtualPetShelterTest {
     @Test
@@ -25,13 +24,7 @@ public class VirtualPetShelterTest {
         assertEquals(initialPetsAvailable + 1, petsAfterIntake);
     }
     @Test
-    public void shouldDisplayPets(){
-        VirtualPetShelter underTest = new VirtualPetShelter();
-
-        String virtualPetsAvailable = underTest.getVirtualPet();
-
-        assertNotEquals(virtualPetsAvailable, null);
-
+    public void shouldListAllPets(){
 
     }
 
