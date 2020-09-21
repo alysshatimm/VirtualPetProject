@@ -1,13 +1,24 @@
 package virtual_pet;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.Collection;
+
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class VirtualPetShelterTest {
+
+    private VirtualPetShelter underTest;
+
+    @BeforeEach
+    void setUp() {
+        underTest = new VirtualPetShelter();
+    }
+
     @Test
     public void initialPetsAvailable(){
-        VirtualPetShelter underTest = new VirtualPetShelter();
 
         int result = underTest.initialPetsAvailable();
 
@@ -15,7 +26,6 @@ public class VirtualPetShelterTest {
 
     }   @Test
     public void shouldIntakePets(){
-        VirtualPetShelter underTest = new VirtualPetShelter();
 
         int initialPetsAvailable = underTest.initialPetsAvailable();
         underTest.addPets();
@@ -25,7 +35,9 @@ public class VirtualPetShelterTest {
     }
     @Test
     public void shouldListAllPets(){
-
+underTest.listPets();
+Collection<VirtualPet> petsForAdoption = underTest.listPets();
+assertThat(petsForAdoption).extracting(VirtualPet::getName);
     }
 
 }

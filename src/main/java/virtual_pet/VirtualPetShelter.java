@@ -1,11 +1,12 @@
 package virtual_pet;
 
 import java.util.ArrayList;
+import java.util.Collection;
 
 public class VirtualPetShelter {
     private int initialPetsAvailable = 0;
-
-    public static void main(String[] args) {
+    private Collection<VirtualPet> petsForAdoption = new ArrayList<>();
+    public Collection<VirtualPet> listPets() {
 
         VirtualPet Jeff = new VirtualPet("Jeff", 10, 10, 10);
         VirtualPet Steve = new VirtualPet("Steve",8,7,5);
@@ -18,7 +19,7 @@ public class VirtualPetShelter {
         VirtualPet George = new VirtualPet("George",120,100,2);
         VirtualPet Frank = new VirtualPet("Frank", 589,0,758);
 
-        ArrayList<VirtualPet> petsForAdoption = new ArrayList<>();
+
         petsForAdoption.add(Jeff);
         petsForAdoption.add(Steve);
         petsForAdoption.add(Charlie);
@@ -29,10 +30,10 @@ public class VirtualPetShelter {
         petsForAdoption.add(Sally);
         petsForAdoption.add(George);
         petsForAdoption.add(Frank);
-        if(petsForAdoption.contains(George)){
-            System.out.println("List contains: George");
+        return petsForAdoption;
+
         }
-    }
+
     public int initialPetsAvailable() {
         return initialPetsAvailable;
     }
