@@ -18,6 +18,16 @@ public class VirtualPetApplication {
 //        VirtualPet George = new VirtualPet("George", 120, 100, 2);
 //        VirtualPet Frank = new VirtualPet("Frank", 589, 0, 758);
 //        shelter.addPet(Frank);
+//        petsForAdoption.add(Jeff);
+//        petsForAdoption.add(Steve);
+//        petsForAdoption.add(Charlie);
+//        petsForAdoption.add(Daisy);
+//        petsForAdoption.add(Kendrick);
+//        petsForAdoption.add(Alex);
+//        petsForAdoption.add(Lucinda);
+//        petsForAdoption.add(Sally);
+//        petsForAdoption.add(George);
+//        petsForAdoption.add(Frank);
 //
 //        System.out.println("Greetings");
 //        System.out.println("List of pets and status");
