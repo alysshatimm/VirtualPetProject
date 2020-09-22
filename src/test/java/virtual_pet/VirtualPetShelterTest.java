@@ -6,7 +6,6 @@ import org.junit.jupiter.api.Test;
 import java.util.Collection;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class VirtualPetShelterTest {
 
@@ -17,23 +16,12 @@ public class VirtualPetShelterTest {
         underTest = new VirtualPetShelter();
     }
 
-    @Test
-    public void initialPetsAvailable() {
-
-        int result = underTest.initialPetsAvailable();
-
-        assertEquals(0, result);
-
-    }
 
     @Test
-    public void shouldIntakePets() {
+    public void shouldAddPets() {
+        VirtualPet petToAdd = new VirtualPet("Jeff", 10, 10, 10);
 
-        int initialPetsAvailable = underTest.initialPetsAvailable();
-        underTest.addPets();
-        int petsAfterIntake = underTest.initialPetsAvailable();
-
-        assertEquals(initialPetsAvailable + 1, petsAfterIntake);
+        underTest.addPets(petToAdd);
     }
 
     @Test

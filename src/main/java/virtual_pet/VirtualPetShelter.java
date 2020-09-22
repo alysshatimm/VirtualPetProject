@@ -7,7 +7,7 @@ import java.util.Map;
 
 public class VirtualPetShelter {
     private int initialPetsAvailable = 0;
-    public Collection<VirtualPet> petsForAdoption = new ArrayList<>();
+   // public Collection<VirtualPet> petsForAdoption = new ArrayList<>();
     public Map<String, String> VirtualPet = new HashMap<>();
 
     public Collection<VirtualPet> listPets() {
@@ -34,15 +34,14 @@ public class VirtualPetShelter {
 //        petsForAdoption.add(Sally);
 //        petsForAdoption.add(George);
 //        petsForAdoption.add(Frank);
-        return petsForAdoption;
+        return null;
 
     }
 //Look into removing these two methods
     // Replace with a addPet(VirtualPet petToAdd) method
     //Create a method that returns all pets in the class.  (return type Collection<VirtualPet>)
     //Create a method that returns a single pet given that pet's name.
-    public int initialPetsAvailable() {
-        return initialPetsAvailable;
+
     }
 
     public void addPets(VirtualPet petToAdd) {
@@ -50,4 +49,7 @@ public class VirtualPetShelter {
     }
 
 
+    public void addPets() {
+
+    }
 }
