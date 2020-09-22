@@ -11,7 +11,7 @@ public class VirtualPetTest {
     }
 
     @Test
-    public void petShouldHaveName(){
+    public void petShouldHaveName() {
         VirtualPet underTest = new VirtualPet("Jeff", 10, 10, 10);
 
         String result = underTest.getName();
@@ -19,8 +19,8 @@ public class VirtualPetTest {
         assertEquals("Jeff", result);
     }
 
-  @Test
-    public void shouldHaveDefaultHunger(){
+    @Test
+    public void shouldHaveDefaultHunger() {
         VirtualPet underTest = new VirtualPet("Steve", 10, 10, 10);
 
         int result = underTest.getHunger();
@@ -29,7 +29,7 @@ public class VirtualPetTest {
     }
 
     @Test
-    public void shouldHaveDefaultThirst(){
+    public void shouldHaveDefaultThirst() {
         VirtualPet underTest = new VirtualPet("Charlie", 10, 10, 10);
 
         int result = underTest.getThirst();
@@ -38,16 +38,17 @@ public class VirtualPetTest {
     }
 
     @Test
-    public void shouldHaveDefaultBoredom(){
+    public void shouldHaveDefaultBoredom() {
         VirtualPet underTest = new VirtualPet("Daisy", 10, 10, 10);
 
         int result = underTest.getBoredom();
 
         assertEquals(10, result);
     }
+
     @Test
     public void hungerTick() {
-        VirtualPet  underTest = new VirtualPet("Kendrick", 10, 10, 10);
+        VirtualPet underTest = new VirtualPet("Kendrick", 10, 10, 10);
 
         int result = underTest.getHunger();
         underTest.tick();
@@ -55,8 +56,9 @@ public class VirtualPetTest {
 
         assertEquals(result + 10, hungerAfterTick);
     }
+
     @Test
-    public void thirstTick(){
+    public void thirstTick() {
         VirtualPet underTest = new VirtualPet("Alex", 10, 10, 10);
 
         int result = underTest.getThirst();
@@ -67,7 +69,7 @@ public class VirtualPetTest {
     }
 
     @Test
-    public void boredomTick(){
+    public void boredomTick() {
         VirtualPet underTest = new VirtualPet("Lucinda", 10, 10, 10);
 
         int result = underTest.getBoredom();
@@ -78,7 +80,7 @@ public class VirtualPetTest {
     }
 
     @Test
-    public void shouldPlay(){
+    public void shouldPlay() {
         //Arrangement
         VirtualPet underTest = new VirtualPet("Sally", 10, 10, 10);
 
@@ -88,10 +90,11 @@ public class VirtualPetTest {
         //Assertion
         int boredomAfterPlay = underTest.getBoredom();
 
-       assertEquals(initalBoredom - 5, boredomAfterPlay);
+        assertEquals(initalBoredom - 5, boredomAfterPlay);
     }
+
     @Test
-    public void shouldFeed(){
+    public void shouldFeed() {
         VirtualPet underTest = new VirtualPet("George", 10, 10, 10);
 
         int initalHunger = underTest.getHunger();
@@ -101,8 +104,9 @@ public class VirtualPetTest {
         assertEquals(initalHunger - 5, hungerAfterFeed);
 
     }
+
     @Test
-    public void shouldWater(){
+    public void shouldWater() {
         VirtualPet underTest = new VirtualPet("Frank", 10, 10, 10);
 
         int initalThirst = underTest.getThirst();
@@ -111,11 +115,12 @@ public class VirtualPetTest {
 
         assertEquals(initalThirst - 5, thirstAfterWater);
     }
+
     @Test
-    public void neverNegativeBoredom(){
+    public void neverNegativeBoredom() {
         VirtualPet underTest = new VirtualPet("Janice", 10, 10, 10);
 
-        for(int i = 0; i< 1000; i++){
+        for (int i = 0; i < 1000; i++) {
             underTest.play();
         }
         int boredom = underTest.getBoredom();
@@ -124,10 +129,10 @@ public class VirtualPetTest {
     }
 
     @Test
-    public void neverNegativeHunger(){
+    public void neverNegativeHunger() {
         VirtualPet underTest = new VirtualPet("Robert", 10, 10, 10);
 
-        for(int i = 0; i< 1000; i++){
+        for (int i = 0; i < 1000; i++) {
             underTest.feed();
         }
         int hunger = underTest.getHunger();
@@ -136,10 +141,10 @@ public class VirtualPetTest {
     }
 
     @Test
-    public void neverNegativeThirst(){
+    public void neverNegativeThirst() {
         VirtualPet underTest = new VirtualPet("Gabby", 10, 10, 10);
 
-        for(int i = 0; i < 1000; i++){
+        for (int i = 0; i < 1000; i++) {
             underTest.water();
         }
         int thirst = underTest.getThirst();

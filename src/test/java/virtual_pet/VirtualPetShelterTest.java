@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 import java.util.Collection;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class VirtualPetShelterTest {
 
@@ -18,14 +18,16 @@ public class VirtualPetShelterTest {
     }
 
     @Test
-    public void initialPetsAvailable(){
+    public void initialPetsAvailable() {
 
         int result = underTest.initialPetsAvailable();
 
         assertEquals(0, result);
 
-    }   @Test
-    public void shouldIntakePets(){
+    }
+
+    @Test
+    public void shouldIntakePets() {
 
         int initialPetsAvailable = underTest.initialPetsAvailable();
         underTest.addPets();
@@ -33,11 +35,15 @@ public class VirtualPetShelterTest {
 
         assertEquals(initialPetsAvailable + 1, petsAfterIntake);
     }
+
     @Test
-    public void shouldListAllPets(){
-underTest.listPets();
-Collection<VirtualPet> petsForAdoption = underTest.listPets();
-assertThat(petsForAdoption).extracting(VirtualPet::getName);
+    public void shouldListAllPets() {
+
+        underTest.listPets();
+
+        Collection<VirtualPet> petsForAdoption = underTest.listPets();
+
+        assertThat(petsForAdoption).extracting(VirtualPet::getName);
     }
 
 }
