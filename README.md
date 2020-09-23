@@ -1,36 +1,27 @@
-# Module 1 Project
-
-## Virtual Pets Amok 
-
-### Team AKM Coders
+## AKM Virtual Pet Adoption Agency
 
 
-Virtual Toys, Inc. requires:
 
-- Development of a console application by a team that practices agile methodology, utilizes test driven design, and values clean code
-- Appropriate use of Git and access to your application on GitHub
-- Useful player instructions in the form of a README.md file
-- An interactive user interface
-- A player can enter the game, play as long as they’d like, and leave the game when they want
-- Player’s choice of organic or robotic pets
-- Ability for players to admit pets into the shelter or adopt them
-- Ability for players to see a list of all pets in the shelter
-- Ability for players to see the current status of pets, such as hunger, boredom, and health
-- Ability for players to interact with one pet or multiple pets, such as feed, play, and take to doctor
-- As players interact with pets, the pet’s status changes
-- As time ticks by, the pet's status changes
-- Players are responsible for cleaning cages
 
-Virtual Pets, Inc. would also like the following, although it is not required:
+### Welcome to the AKM Virtual Pet Adoption Agency!
 
-- A visual representation of the pet’s status
-- Give pets a personality and uniqueness, such as a favorite food, in which they respond accordingly when fed
-- Increase the number of statuses, activities, pets, etc.
+Are you in the market for a new virtual friend? Well, you've come to the right place! The AKM Virtual Adoption Agency currently 
+houses 6 adorable and adoptable virtual pets for you to choose from.
 
-## Grading Guidelines
-A word about our grading, we will be evaluating your projects on five different aspects of software development:
-- Working Software
-- Test Driven Development
-- Clean Code
-- Agile/Team Development Practices
-- Use of Version Control/Git
+- View our entire catalog of pets available, and interact with all our pets by feeding them, giving them water, as well as playing with them. 
+- The virtual pets' stats for hunger, thirst, and boredom will update and display to you automatically, so you always know what your new companion needs.
+- When you find the virtual pet of your dreams, remove them from the shelter at any time. 
+- If you'd like to add a pet to the shelter, you can do that as well!
+
+### Key Gameplay Features
+
+- Interact with all the pets in the shelter through a series of easy to understand numerical commands.
+- The list of pets currently in the shelter updates in real time as you interact with them.
+- As time goes on, hunger, thirst, and boredom levels automatically increase, so make sure to keep your pets fed, watered, and entertained!
+- Leave the shelter at any time; the pets will be here waiting for you when you return!
+
+
+
+
+
+
