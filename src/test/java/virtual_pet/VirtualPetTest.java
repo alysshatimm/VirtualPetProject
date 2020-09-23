@@ -54,7 +54,7 @@ public class VirtualPetTest {
         underTest.tick();
         int hungerAfterTick = underTest.getHunger();
 
-        assertEquals(result + 10, hungerAfterTick);
+        assertEquals(result + 2, hungerAfterTick);
     }
 
     @Test
@@ -65,7 +65,7 @@ public class VirtualPetTest {
         underTest.tick();
         int thirstAfterTick = underTest.getThirst();
 
-        assertEquals(result + 10, thirstAfterTick);
+        assertEquals(result + 2, thirstAfterTick);
     }
 
     @Test
@@ -76,7 +76,7 @@ public class VirtualPetTest {
         underTest.tick();
         int boredomAfterTick = underTest.getBoredom();
 
-        assertEquals(result + 10, boredomAfterTick);
+        assertEquals(result + 2, boredomAfterTick);
     }
 
     @Test
@@ -90,7 +90,7 @@ public class VirtualPetTest {
         //Assertion
         int boredomAfterPlay = underTest.getBoredom();
 
-        assertEquals(initalBoredom - 5, boredomAfterPlay);
+        assertEquals(initalBoredom - 10, boredomAfterPlay);
     }
 
     @Test
@@ -101,7 +101,7 @@ public class VirtualPetTest {
         underTest.feed();
         int hungerAfterFeed = underTest.getHunger();
 
-        assertEquals(initalHunger - 5, hungerAfterFeed);
+        assertEquals(initalHunger - 10, hungerAfterFeed);
 
     }
 
@@ -113,7 +113,7 @@ public class VirtualPetTest {
         underTest.water();
         int thirstAfterWater = underTest.getThirst();
 
-        assertEquals(initalThirst - 5, thirstAfterWater);
+        assertEquals(initalThirst - 10, thirstAfterWater);
     }
 
     @Test

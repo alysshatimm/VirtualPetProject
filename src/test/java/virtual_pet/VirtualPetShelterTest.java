@@ -37,8 +37,8 @@ public class VirtualPetShelterTest {
 
         underTest.feedAllPets();
 
-        assertThat(testPet.getHunger()).isEqualTo(5);
-        assertThat(anotherTestPet.getHunger()).isEqualTo(5);
+        assertThat(testPet.getHunger()).isEqualTo(0);
+        assertThat(anotherTestPet.getHunger()).isEqualTo(0);
     }
     @Test
     public void shouldBeAbleToPlayWithAllPets(){
@@ -50,8 +50,8 @@ public class VirtualPetShelterTest {
 
         underTest.playWithAllPets();
 
-        assertThat(testPet.getBoredom()).isEqualTo(5);
-        assertThat(anotherTestPet.getBoredom()).isEqualTo(5);
+        assertThat(testPet.getBoredom()).isEqualTo(0);
+        assertThat(anotherTestPet.getBoredom()).isEqualTo(0);
     }
     @Test
     public void shouldBeAbleToWaterAllPets(){
@@ -63,8 +63,8 @@ public class VirtualPetShelterTest {
 
         underTest.waterAllPets();
 
-        assertThat(testPet.getThirst()).isEqualTo(5);
-        assertThat(anotherTestPet.getThirst()).isEqualTo(5);
+        assertThat(testPet.getThirst()).isEqualTo(0);
+        assertThat(anotherTestPet.getThirst()).isEqualTo(0);
     }
 //    @Test
 //    public void shouldTickAllPets(){
