@@ -11,7 +11,7 @@ public class VirtualPetShelterTest {
     @Test
     public void shouldBeAbleToAddPet(){
         VirtualPetShelter underTest = new VirtualPetShelter();
-        VirtualPet testPet = new VirtualPet("Frank",10,10,10);
+        VirtualPet testPet = new OrganicPets("Frank",10,10,10);
         underTest.addPet(testPet);
         Collection<VirtualPet> pets = underTest.retrievePets();
         assertThat(pets).hasSize(1)
@@ -20,7 +20,7 @@ public class VirtualPetShelterTest {
     @Test
     public void shouldBeAbleToRemovePet(){
         VirtualPetShelter underTest = new VirtualPetShelter();
-        VirtualPet testPet = new VirtualPet("Frank",10,10,10);
+        VirtualPet testPet = new RoboticPets("Frank",10,10,10);
         underTest.addPet(testPet);
         underTest.removePet(testPet.getName());
         Collection<VirtualPet> pets = underTest.retrievePets();
@@ -30,21 +30,21 @@ public class VirtualPetShelterTest {
     @Test
     public void shouldBeAbleToFeedAllPets(){
         VirtualPetShelter underTest = new VirtualPetShelter();
-        VirtualPet testPet = new VirtualPet("Jeff",10,10,10);
-        VirtualPet anotherTestPet = new VirtualPet("Tester",10,10,10);
+        VirtualPet testPet = new OrganicPets("Jeff",10,10,10);
+        VirtualPet anotherTestPet = new OrganicPets("Tester",10,10,10);
         underTest.addPet(testPet);
         underTest.addPet(anotherTestPet);
 
         underTest.feedAllPets();
 
-        assertThat(testPet.getHunger()).isEqualTo(0);
-        assertThat(anotherTestPet.getHunger()).isEqualTo(0);
+        assertThat(((OrganicPets) testPet).getHunger()).isEqualTo(0);
+        assertThat(((OrganicPets) anotherTestPet).getHunger()).isEqualTo(0);
     }
     @Test
     public void shouldBeAbleToPlayWithAllPets(){
         VirtualPetShelter underTest = new VirtualPetShelter();
-        VirtualPet testPet = new VirtualPet("Jeff",10,10,10);
-        VirtualPet anotherTestPet = new VirtualPet("Tester",10,10,10);
+        VirtualPet testPet = new RoboticPets("Jeff",10,10,10);
+        VirtualPet anotherTestPet = new OrganicPets("Tester",10,10,10);
         underTest.addPet(testPet);
         underTest.addPet(anotherTestPet);
 
@@ -56,15 +56,15 @@ public class VirtualPetShelterTest {
     @Test
     public void shouldBeAbleToWaterAllPets(){
         VirtualPetShelter underTest = new VirtualPetShelter();
-        VirtualPet testPet = new VirtualPet("Jeff",10,10,10);
-        VirtualPet anotherTestPet = new VirtualPet("Tester",10,10,10);
+        VirtualPet testPet = new OrganicPets("Jeff",10,10,10);
+        VirtualPet anotherTestPet = new OrganicPets("Tester",10,10,10);
         underTest.addPet(testPet);
         underTest.addPet(anotherTestPet);
 
         underTest.waterAllPets();
 
-        assertThat(testPet.getThirst()).isEqualTo(0);
-        assertThat(anotherTestPet.getThirst()).isEqualTo(0);
+        assertThat(((OrganicPets) testPet).getThirst()).isEqualTo(0);
+        assertThat(((OrganicPets) anotherTestPet).getThirst()).isEqualTo(0);
     }
 //    @Test
 //    public void shouldTickAllPets(){

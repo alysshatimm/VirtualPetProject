@@ -1,5 +1,6 @@
 package virtual_pet;
 
+import java.awt.*;
 import java.util.Scanner;
 
 public class VirtualPetApplication {
@@ -7,12 +8,12 @@ public class VirtualPetApplication {
     public static void main(String[] args) {
 
         VirtualPetShelter shelter = new VirtualPetShelter();
-        VirtualPet Jeff = new VirtualPet("Jeff", 10, 10, 10);
-        VirtualPet Steve = new VirtualPet("Steve", 8, 7, 5);
-        VirtualPet Charlie = new VirtualPet("Charlie", 15, 20, 30);
-        VirtualPet Daisy = new VirtualPet("Daisy", 12, 7, 25);
-        VirtualPet Kendrick = new VirtualPet("Kendrick", 56, 83, 32);
-        VirtualPet Lucinda = new VirtualPet("Lucinda", 99, 99, 99);
+        VirtualPet Jeff = new RoboticPets("Jeff", 10, 10, 10);
+        VirtualPet Steve = new OrganicPets("Steve", 8, 7, 5);
+        VirtualPet Charlie = new RoboticPets("Charlie", 15, 20, 30);
+        VirtualPet Daisy = new OrganicPets("Daisy", 12, 7, 25);
+        VirtualPet Kendrick = new RoboticPets("Kendrick", 56, 83, 32);
+        VirtualPet Lucinda = new OrganicPets("Lucinda", 99, 99, 99);
         shelter.addPet(Jeff);
         shelter.addPet(Steve);
         shelter.addPet(Charlie);
@@ -61,7 +62,7 @@ public class VirtualPetApplication {
             if (userInput.equalsIgnoreCase("5")) {
                 System.out.println("What is the name of the pet you're adding?");
                 String petName = inputScanner.nextLine();
-                VirtualPet petNameToAdd = new VirtualPet(petName, 10, 10, 10);
+                VirtualPet petNameToAdd = new RoboticPets(petName, 10, 10, 10);
                 shelter.addPet(petNameToAdd);
             }
             for(VirtualPet petToDisplay : shelter.retrievePets()){
