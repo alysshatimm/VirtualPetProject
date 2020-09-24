@@ -28,17 +28,15 @@ public class VirtualPetShelter {
 
     //feed
     public void feedAllOrganicPets() {
-            for (VirtualPet petToFeed : pets.values()) {
-                if (OrganicPets instanceof VirtualPet) {
-                    petToFeed.feed();
-                }
-            }
+        if (pets instanceof OrganicPets) {
+            ((OrganicPets) pets).feed();
         }
+    }
 
     //water
-    public void waterAllPets() {
-        for (VirtualPet petToWater : pets.values()) {
-            petToWater.water();
+    public void waterAllOrganicPets() {
+        if (pets instanceof OrganicPets){
+            ((OrganicPets)pets).water();
         }
     }
 

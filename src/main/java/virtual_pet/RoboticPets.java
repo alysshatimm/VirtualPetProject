@@ -9,22 +9,6 @@ public class RoboticPets extends VirtualPet {
         this.oilLevel = oilLevel;
         this.wearAndTear = wearAndTear;
     }
-
-    @Override
-    public void play() {
-        super.play();
-    }
-
-    @Override
-    public String getName() {
-        return super.getName();
-    }
-
-    @Override
-    public int getBoredom() {
-        return super.getBoredom();
-    }
-
     public int getOilLevel() {
         return oilLevel;
     }

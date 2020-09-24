@@ -13,11 +13,9 @@ public abstract class VirtualPet {
         return name;
     }
 
-
     public int getBoredom() {
         return boredom;
     }
-
 
     public void tick() {
         boredom += 2;

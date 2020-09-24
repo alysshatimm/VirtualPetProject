@@ -46,7 +46,7 @@ public class VirtualPetApplication {
                 shelter.tickAllPets();
             }
             if (userInput.equalsIgnoreCase("2")) {
-                shelter.waterAllPets();
+                shelter.waterAllOrganicPets();
                 shelter.tickAllPets();
             }
             if (userInput.equalsIgnoreCase("3")) {

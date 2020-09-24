@@ -61,10 +61,10 @@ public class VirtualPetShelterTest {
         underTest.addPet(testPet);
         underTest.addPet(anotherTestPet);
 
-        underTest.waterAllPets();
+        underTest.waterAllOrganicPets();
 
-        assertThat(((OrganicPets) testPet).getThirst()).isEqualTo(0);
-        assertThat(((OrganicPets) anotherTestPet).getThirst()).isEqualTo(0);
+        assertThat(((OrganicPets) testPet).getThirst()).isEqualTo(10);
+        assertThat(((OrganicPets) anotherTestPet).getThirst()).isEqualTo(10);
     }
 //    @Test
 //    public void shouldTickAllPets(){
