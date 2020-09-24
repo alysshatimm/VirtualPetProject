@@ -28,17 +28,39 @@ public class VirtualPetShelter {
 
     //feed
     public void feedAllOrganicPets() {
-        if (pets instanceof OrganicPets) {
-            ((OrganicPets) pets).feed();
+        for (VirtualPet petToFeed : pets.values()) {
+            if (petToFeed instanceof OrganicPets) {
+                ((OrganicPets) petToFeed).feed();
+            }
+
         }
     }
 
     //water
     public void waterAllOrganicPets() {
-        if (pets instanceof OrganicPets){
-            ((OrganicPets)pets).water();
+        for (VirtualPet petToWater : pets.values()) {
+            if (petToWater instanceof OrganicPets) {
+                ((OrganicPets) petToWater).water();
+            }
         }
     }
+
+    public void oilAllRoboticPets() {
+        for (VirtualPet petToOil : pets.values()) {
+            if (petToOil instanceof RoboticPets) {
+                ((RoboticPets) petToOil).oil();
+            }
+        }
+    }
+
+    public void maintainAllRoboticPets() {
+        for (VirtualPet petToMaintain : pets.values()) {
+            if (petToMaintain instanceof RoboticPets) {
+                ((RoboticPets) petToMaintain).maintenance();
+            }
+        }
+    }
+
 
     //tick
     public void tickAllPets() {

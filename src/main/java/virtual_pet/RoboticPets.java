@@ -33,10 +33,10 @@ public class RoboticPets extends VirtualPet {
             wearAndTear = 0;
         }
     }
-//    @Override
-//    public String toString() {
-//        return name + " | Oil Level: " + oilLevel + " | Wear and Tear: " + wearAndTear + " | Boredom: " + boredom;
-//    }
+    @Override
+    public String toString() {
+        return getName() + " | Oil Level: " + oilLevel + " | Wear and Tear: " + wearAndTear + " | Boredom: " + getBoredom();
+    }
 }
 
 

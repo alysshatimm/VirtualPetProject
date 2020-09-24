@@ -1,8 +1,8 @@
 package virtual_pet;
 
 public class OrganicPets extends VirtualPet {
-    private int hunger = 10;
-    private int thirst = 10;
+    private int hunger;
+    private int thirst;
 
     public OrganicPets(String name, int hunger, int thirst, int boredom) {
         super(name, boredom);
@@ -37,8 +37,8 @@ public class OrganicPets extends VirtualPet {
         }
     }
 
-//    @Override
-//    public String toString() {
-//        return name + " | Hunger: " + hunger + " | Thirst: " + thirst + " | Boredom: " + boredom;
-//    }
+    @Override
+    public String toString() {
+        return getName() + " | Hunger: " + hunger + " | Thirst: " + thirst + " | Boredom: " + getBoredom();
+    }
 }

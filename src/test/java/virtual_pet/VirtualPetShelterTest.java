@@ -63,8 +63,34 @@ public class VirtualPetShelterTest {
 
         underTest.waterAllOrganicPets();
 
-        assertThat(((OrganicPets) testPet).getThirst()).isEqualTo(10);
-        assertThat(((OrganicPets) anotherTestPet).getThirst()).isEqualTo(10);
+        assertThat(((OrganicPets) testPet).getThirst()).isEqualTo(0);
+        assertThat(((OrganicPets) anotherTestPet).getThirst()).isEqualTo(0);
+    }
+    @Test
+    public void shouldBeAbleToOilAllPets(){
+        VirtualPetShelter underTest = new VirtualPetShelter();
+        VirtualPet testPet = new RoboticPets("Jeff",10,10,10);
+        VirtualPet anotherTestPet = new RoboticPets("Tester",10,10,10);
+        underTest.addPet(testPet);
+        underTest.addPet(anotherTestPet);
+
+        underTest.oilAllRoboticPets();
+
+        assertThat(((RoboticPets) testPet).getOilLevel()).isEqualTo(0);
+        assertThat(((RoboticPets) anotherTestPet).getOilLevel()).isEqualTo(0);
+    }
+    @Test
+    public void shouldBeAbleToMaintainAllPets(){
+        VirtualPetShelter underTest = new VirtualPetShelter();
+        VirtualPet testPet = new RoboticPets("Jeff",10,10,10);
+        VirtualPet anotherTestPet = new RoboticPets("Tester",10,10,10);
+        underTest.addPet(testPet);
+        underTest.addPet(anotherTestPet);
+
+        underTest.maintainAllRoboticPets();
+
+        assertThat(((RoboticPets) testPet).getWearAndTear()).isEqualTo(0);
+        assertThat(((RoboticPets) anotherTestPet).getWearAndTear()).isEqualTo(0);
     }
 //    @Test
 //    public void shouldTickAllPets(){
