@@ -76,8 +76,8 @@ public class VirtualPetShelterTest {
 
         underTest.oilAllRoboticPets();
 
-        assertThat(((RoboticPets) testPet).getOilLevel()).isEqualTo(0);
-        assertThat(((RoboticPets) anotherTestPet).getOilLevel()).isEqualTo(0);
+        assertThat(((RoboticPets) testPet).getOilLevel()).isEqualTo(20);
+        assertThat(((RoboticPets) anotherTestPet).getOilLevel()).isEqualTo(20);
     }
     @Test
     public void shouldBeAbleToMaintainAllPets(){

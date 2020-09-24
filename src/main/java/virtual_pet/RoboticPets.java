@@ -22,7 +22,7 @@ public class RoboticPets extends VirtualPet {
         wearAndTear += 2;
     }
     public void oil(){
-        oilLevel -= 10;
+        oilLevel += 10;
         if (oilLevel <= 0) {
             oilLevel = 0;
         }

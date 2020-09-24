@@ -8,7 +8,7 @@ public class VirtualPetApplication {
     public static void main(String[] args) {
 
         VirtualPetShelter shelter = new VirtualPetShelter();
-        VirtualPet Jeff = new RoboticPets("RoboJeff", 10, 10, 10);
+        VirtualPet Jeff = new RoboDogs("RoboJeff", 10, 10, 10);
         VirtualPet Steve = new OrganicPets("Steve", 8, 7, 5);
         VirtualPet Charlie = new RoboticPets("RoboCharlie", 15, 20, 30);
         VirtualPet Daisy = new OrganicPets("Daisy", 12, 7, 25);
@@ -40,6 +40,7 @@ public class VirtualPetApplication {
         System.out.println("Enter 5 to add a pet ");
         System.out.println("Enter 6 to oil robotic pets ");
         System.out.println("Enter 7 to maintain robotic pets ");
+        System.out.println("Enter 8 to walk all dogs");
         System.out.println("To leave the adoption agency, please type \"Quit\"");
         String userInput = inputScanner.nextLine();
         while (!userInput.equalsIgnoreCase("quit")) {
@@ -75,6 +76,13 @@ public class VirtualPetApplication {
                 shelter.maintainAllRoboticPets();
                 shelter.tickAllPets();
             }
+            if (userInput.equalsIgnoreCase("8")) {
+                if (shelter instanceof Walking){
+                    ((Walking)shelter).walk();
+                    shelter.tickAllPets();
+                }
+
+            }
             for(VirtualPet petToDisplay : shelter.retrievePets()){
                 System.out.println(petToDisplay);
             }
@@ -85,6 +93,7 @@ public class VirtualPetApplication {
             System.out.println("Enter 5 to add a pet ");
             System.out.println("Enter 6 to oil robotic pets ");
             System.out.println("Enter 7 to maintain robotic pets ");
+            System.out.println("Enter 8 to walk all dogs");
             userInput = inputScanner.nextLine();
             }
         }
