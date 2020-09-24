@@ -35,7 +35,7 @@ public class VirtualPetShelterTest {
         underTest.addPet(testPet);
         underTest.addPet(anotherTestPet);
 
-        underTest.feedAllPets();
+        underTest.feedAllOrganicPets();
 
         assertThat(((OrganicPets) testPet).getHunger()).isEqualTo(0);
         assertThat(((OrganicPets) anotherTestPet).getHunger()).isEqualTo(0);

@@ -7,39 +7,43 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class VirtualPetTest {
     @Test
     public void shouldBeAbleToCreatePet() {
-        VirtualPet pet = new VirtualPet("Test name", 10, 10, 10);
+        VirtualPet pet = new OrganicPets("Test name", 10, 10, 10);
+        VirtualPet roboPet = new RoboticPets("Test name 2",10,10,10);
     }
 
     @Test
     public void petShouldHaveName() {
-        VirtualPet underTest = new VirtualPet("Jeff", 10, 10, 10);
+        VirtualPet underTest = new OrganicPets("Jeff", 10, 10, 10);
+        VirtualPet underTest2 = new RoboticPets("roboJeff",10,10,10);
 
         String result = underTest.getName();
+        String result2 = underTest2.getName();
 
         assertEquals("Jeff", result);
+        assertEquals("roboJeff", result2);
     }
 
     @Test
     public void shouldHaveDefaultHunger() {
-        VirtualPet underTest = new VirtualPet("Steve", 10, 10, 10);
+        VirtualPet underTest = new OrganicPets("Steve", 10, 10, 10);
 
-        int result = underTest.getHunger();
+        int result = ((OrganicPets) underTest).getHunger();
 
         assertEquals(10, result);
     }
 
     @Test
     public void shouldHaveDefaultThirst() {
-        VirtualPet underTest = new VirtualPet("Charlie", 10, 10, 10);
+        VirtualPet underTest = new OrganicPets("Charlie", 10, 10, 10);
 
-        int result = underTest.getThirst();
+        int result = ((OrganicPets) underTest).getThirst();
 
         assertEquals(10, result);
     }
 
     @Test
     public void shouldHaveDefaultBoredom() {
-        VirtualPet underTest = new VirtualPet("Daisy", 10, 10, 10);
+        VirtualPet underTest = new RoboticPets("roboDaisy", 10, 10, 10);
 
         int result = underTest.getBoredom();
 
@@ -48,29 +52,29 @@ public class VirtualPetTest {
 
     @Test
     public void hungerTick() {
-        VirtualPet underTest = new VirtualPet("Kendrick", 10, 10, 10);
+        VirtualPet underTest = new OrganicPets("Kendrick", 10, 10, 10);
 
-        int result = underTest.getHunger();
+        int result = ((OrganicPets) underTest).getHunger();
         underTest.tick();
-        int hungerAfterTick = underTest.getHunger();
+        int hungerAfterTick = ((OrganicPets) underTest).getHunger();
 
         assertEquals(result + 2, hungerAfterTick);
     }
 
     @Test
     public void thirstTick() {
-        VirtualPet underTest = new VirtualPet("Alex", 10, 10, 10);
+        VirtualPet underTest = new OrganicPets("Alex", 10, 10, 10);
 
-        int result = underTest.getThirst();
+        int result = ((OrganicPets) underTest).getThirst();
         underTest.tick();
-        int thirstAfterTick = underTest.getThirst();
+        int thirstAfterTick = ((OrganicPets) underTest).getThirst();
 
         assertEquals(result + 2, thirstAfterTick);
     }
 
     @Test
     public void boredomTick() {
-        VirtualPet underTest = new VirtualPet("Lucinda", 10, 10, 10);
+        VirtualPet underTest = new RoboticPets("roboLucinda", 10, 10, 10);
 
         int result = underTest.getBoredom();
         underTest.tick();
@@ -82,7 +86,7 @@ public class VirtualPetTest {
     @Test
     public void shouldPlay() {
         //Arrangement
-        VirtualPet underTest = new VirtualPet("Sally", 10, 10, 10);
+        VirtualPet underTest = new RoboticPets("roboSally", 10, 10, 10);
 
         int initalBoredom = underTest.getBoredom();
         //Action
@@ -95,11 +99,11 @@ public class VirtualPetTest {
 
     @Test
     public void shouldFeed() {
-        VirtualPet underTest = new VirtualPet("George", 10, 10, 10);
+        VirtualPet underTest = new OrganicPets("George", 10, 10, 10);
 
-        int initalHunger = underTest.getHunger();
-        underTest.feed();
-        int hungerAfterFeed = underTest.getHunger();
+        int initalHunger = ((OrganicPets) underTest).getHunger();
+        ((OrganicPets) underTest).feed();
+        int hungerAfterFeed = ((OrganicPets) underTest).getHunger();
 
         assertEquals(initalHunger - 10, hungerAfterFeed);
 
@@ -107,18 +111,18 @@ public class VirtualPetTest {
 
     @Test
     public void shouldWater() {
-        VirtualPet underTest = new VirtualPet("Frank", 10, 10, 10);
+        VirtualPet underTest = new OrganicPets("Frank", 10, 10, 10);
 
-        int initalThirst = underTest.getThirst();
-        underTest.water();
-        int thirstAfterWater = underTest.getThirst();
+        int initalThirst = ((OrganicPets) underTest).getThirst();
+        ((OrganicPets) underTest).water();
+        int thirstAfterWater = ((OrganicPets) underTest).getThirst();
 
         assertEquals(initalThirst - 10, thirstAfterWater);
     }
 
     @Test
     public void neverNegativeBoredom() {
-        VirtualPet underTest = new VirtualPet("Janice", 10, 10, 10);
+        VirtualPet underTest = new RoboticPets("roboJanice", 10, 10, 10);
 
         for (int i = 0; i < 1000; i++) {
             underTest.play();
@@ -130,24 +134,24 @@ public class VirtualPetTest {
 
     @Test
     public void neverNegativeHunger() {
-        VirtualPet underTest = new VirtualPet("Robert", 10, 10, 10);
+        VirtualPet underTest = new OrganicPets("Robert", 10, 10, 10);
 
         for (int i = 0; i < 1000; i++) {
-            underTest.feed();
+            ((OrganicPets) underTest).feed();
         }
-        int hunger = underTest.getHunger();
+        int hunger = ((OrganicPets) underTest).getHunger();
 
         assertEquals(0, hunger);
     }
 
     @Test
     public void neverNegativeThirst() {
-        VirtualPet underTest = new VirtualPet("Gabby", 10, 10, 10);
+        VirtualPet underTest = new OrganicPets("Gabby", 10, 10, 10);
 
         for (int i = 0; i < 1000; i++) {
-            underTest.water();
+            ((OrganicPets) underTest).water();
         }
-        int thirst = underTest.getThirst();
+        int thirst = ((OrganicPets) underTest).getThirst();
 
         assertEquals(0, thirst);
     }

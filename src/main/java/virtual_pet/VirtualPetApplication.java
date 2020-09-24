@@ -42,7 +42,7 @@ public class VirtualPetApplication {
         String userInput = inputScanner.nextLine();
         while (!userInput.equalsIgnoreCase("quit")) {
             if (userInput.equalsIgnoreCase("1")) {
-                shelter.feedAllPets();
+                shelter.feedAllOrganicPets();
                 shelter.tickAllPets();
             }
             if (userInput.equalsIgnoreCase("2")) {
