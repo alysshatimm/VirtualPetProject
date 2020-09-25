@@ -9,10 +9,10 @@ public class VirtualPetApplication {
 
         VirtualPetShelter shelter = new VirtualPetShelter();
         VirtualPet Jeff = new RoboDogs("RoboJeff", 10, 10, 10);
-        VirtualPet Steve = new OrganicPets("Steve", 8, 7, 5);
-        VirtualPet Charlie = new RoboticPets("RoboCharlie", 15, 20, 30);
-        VirtualPet Daisy = new OrganicPets("Daisy", 12, 7, 25);
-        VirtualPet Kendrick = new RoboticPets("RoboKendrick", 56, 83, 32);
+        VirtualPet Steve = new OrganicCats("Steve", 10, 10, 10);
+        VirtualPet Charlie = new RoboCats("RoboCharlie", 10, 10, 10);
+        VirtualPet Daisy = new OrganicCats("Daisy", 12, 7, 25);
+        VirtualPet Kendrick = new RoboDogs("RoboKendrick", 56, 83, 32);
         VirtualPet Lucinda = new OrganicDog("Lucinda", 20, 20, 20);
         shelter.addPet(Jeff);
         shelter.addPet(Steve);
@@ -33,15 +33,15 @@ public class VirtualPetApplication {
         }
         System.out.println("INSTRUCTIONS:");
         System.out.println();
-        System.out.println("Enter 1 to feed the organic pets");
-        System.out.println("Enter 2 to give water to the organic pets");
+        System.out.println("Enter 1 to feed the Organic pets");
+        System.out.println("Enter 2 to give water to the Organic pets");
         System.out.println("Enter 3 to play with all the pets");
         System.out.println("Enter 4 to remove a pet");
         System.out.println("Enter 5 to add a pet");
-        System.out.println("Enter 6 to oil robotic pets");
-        System.out.println("Enter 7 to maintain robotic pets");
-        System.out.println("Enter 8 to walk all RoboDogs");
-        System.out.println("Enter 9 to walk all Organic dogs");
+        System.out.println("Enter 6 to oil Robotic pets");
+        System.out.println("Enter 7 to maintain Robotic pets");
+        System.out.println("Enter 8 to walk all Dogs");
+        System.out.println("Enter 9 to use the laser pointer with all Cats");
         System.out.println("To leave the adoption agency, please type \"Quit\"");
         String userInput = inputScanner.nextLine();
         while (!userInput.equalsIgnoreCase("quit")) {
@@ -84,31 +84,46 @@ public class VirtualPetApplication {
                         shelter.tickAllPets();
                     }
             }
-            if (userInput.equalsIgnoreCase("9")) {
+            if (userInput.equalsIgnoreCase("8")) {
                 for (VirtualPet petToWalk : shelter.retrievePets())
                     if (petToWalk instanceof OrganicDog) {
                         ((OrganicDog) petToWalk).walk();
                         shelter.tickAllPets();
                     }
-
-                for (VirtualPet petToDisplay : shelter.retrievePets()) {
-                    System.out.println(petToDisplay);
-                }
-                System.out.println("Enter 1 to feed the organic pets ");
-                System.out.println("Enter 2 to give water to the organic pets ");
-                System.out.println("Enter 3 to play with all the pets");
-                System.out.println("Enter 4 to remove a pet ");
-                System.out.println("Enter 5 to add a pet ");
-                System.out.println("Enter 6 to oil robotic pets ");
-                System.out.println("Enter 7 to maintain robotic pets ");
-                System.out.println("Enter 8 to walk all dogs");
-                System.out.println("Enter 9 to walk all Organic dogs");
-                userInput = inputScanner.nextLine();
             }
+                if (userInput.equalsIgnoreCase("9")) {
+                    for (VirtualPet petToLaserPointer : shelter.retrievePets())
+                        if (petToLaserPointer instanceof OrganicCats) {
+                            ((OrganicCats) petToLaserPointer).pointLaser();
+                            shelter.tickAllPets();
+                        }
+                }
+            if (userInput.equalsIgnoreCase("9")) {
+                for (VirtualPet petToLaserPointer : shelter.retrievePets())
+                    if (petToLaserPointer instanceof RoboCats) {
+                        ((RoboCats) petToLaserPointer).pointLaser();
+                        shelter.tickAllPets();
+                    }
+            }
+                    for (VirtualPet petToDisplay : shelter.retrievePets()) {
+                        System.out.println(petToDisplay);
+                    }
+                    System.out.println("Enter 1 to feed the organic pets ");
+                    System.out.println("Enter 2 to give water to the organic pets ");
+                    System.out.println("Enter 3 to play with all the pets");
+                    System.out.println("Enter 4 to remove a pet ");
+                    System.out.println("Enter 5 to add a pet ");
+                    System.out.println("Enter 6 to oil robotic pets ");
+                    System.out.println("Enter 7 to maintain robotic pets ");
+                    System.out.println("Enter 8 to walk all dogs");
+                    System.out.println("Enter 9 to walk all Organic dogs");
+                    System.out.println("Enter 10 to use the laser pointer with all cats");
+                    userInput = inputScanner.nextLine();
+                }
+            }
+
         }
 
-    }
-}
 
 
 

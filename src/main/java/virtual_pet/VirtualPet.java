@@ -1,7 +1,7 @@
 package virtual_pet;
 
 public abstract class VirtualPet {
-    private int boredom = 10;
+    protected int boredom = 10;
     private String name;
 
     public VirtualPet(String name, int boredom) {
