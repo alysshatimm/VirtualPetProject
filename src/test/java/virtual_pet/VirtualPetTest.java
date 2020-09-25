@@ -8,13 +8,13 @@ public class VirtualPetTest {
     @Test
     public void shouldBeAbleToCreatePet() {
         VirtualPet pet = new OrganicPets("Test name", 10, 10, 10);
-        VirtualPet roboPet = new RoboticPets("Test name 2",10,10,10);
+        VirtualPet roboPet = new RoboticPets("Test name 2", 10, 10, 10);
     }
 
     @Test
     public void petShouldHaveName() {
         VirtualPet underTest = new OrganicPets("Jeff", 10, 10, 10);
-        VirtualPet underTest2 = new RoboticPets("roboJeff",10,10,10);
+        VirtualPet underTest2 = new RoboticPets("roboJeff", 10, 10, 10);
 
         String result = underTest.getName();
         String result2 = underTest2.getName();
@@ -74,7 +74,7 @@ public class VirtualPetTest {
 
     @Test
     public void boredomTick() {
-        VirtualPet underTest = new RoboticPets("roboLucinda", 10, 10, 10);
+        VirtualPet underTest = new OrganicPets("Lucinda", 10, 10, 10);
 
         int result = underTest.getBoredom();
         underTest.tick();
@@ -154,5 +154,17 @@ public class VirtualPetTest {
         int thirst = ((OrganicPets) underTest).getThirst();
 
         assertEquals(0, thirst);
+    }
+
+    @Test
+    public void neverNegativeWearAndTear() {
+        VirtualPet underTest = new RoboticPets("Gabby", 10, 10, 10);
+
+        for (int i = 0; i < 1000; i++) {
+            ((RoboticPets) underTest).maintenance();
+        }
+        int wearAndTear = ((RoboticPets) underTest).getWearAndTear();
+
+        assertEquals(0, wearAndTear);
     }
 }

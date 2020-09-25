@@ -20,6 +20,7 @@ public class RoboticPets extends VirtualPet {
     public void tick() {
         oilLevel += 2;
         wearAndTear += 2;
+        boredom += 2;
     }
     public void oil(){
         oilLevel += 10;

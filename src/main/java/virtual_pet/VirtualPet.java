@@ -1,7 +1,7 @@
 package virtual_pet;
 
 public abstract class VirtualPet {
-    protected int boredom = 10;
+    protected int boredom;
     private String name;
 
     public VirtualPet(String name, int boredom) {
@@ -27,10 +27,4 @@ public abstract class VirtualPet {
             boredom = 0;
         }
     }
-
-//@Override
-//    public String toString(){
-//        return name + " | Hunger: " + hunger + " | Thirst: " + thirst + " | Boredom: " + boredom;
-//}
-
 }

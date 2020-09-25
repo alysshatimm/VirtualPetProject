@@ -21,6 +21,7 @@ public class OrganicPets extends VirtualPet {
     public void tick() {
         hunger += 2;
         thirst += 2;
+        boredom += 2;
     }
     public void feed() {
         hunger -= 10;
