@@ -5,8 +5,10 @@ public class OrganicDog extends OrganicPets implements Walking {
         super(name, hunger, thirst, boredom);
     }
 
+
     @Override
     public void walk() {
-
+        hunger += 10;
+        thirst += 10;
     }
 }

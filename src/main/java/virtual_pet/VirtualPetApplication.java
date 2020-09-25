@@ -13,7 +13,7 @@ public class VirtualPetApplication {
         VirtualPet Charlie = new RoboticPets("RoboCharlie", 15, 20, 30);
         VirtualPet Daisy = new OrganicPets("Daisy", 12, 7, 25);
         VirtualPet Kendrick = new RoboticPets("RoboKendrick", 56, 83, 32);
-        VirtualPet Lucinda = new OrganicPets("Lucinda", 99, 99, 99);
+        VirtualPet Lucinda = new OrganicDog("Lucinda", 20, 20, 20);
         shelter.addPet(Jeff);
         shelter.addPet(Steve);
         shelter.addPet(Charlie);
@@ -33,14 +33,15 @@ public class VirtualPetApplication {
         }
         System.out.println("INSTRUCTIONS:");
         System.out.println();
-        System.out.println("Enter 1 to feed the organic pets ");
-        System.out.println("Enter 2 to give water to the organic pets ");
+        System.out.println("Enter 1 to feed the organic pets");
+        System.out.println("Enter 2 to give water to the organic pets");
         System.out.println("Enter 3 to play with all the pets");
-        System.out.println("Enter 4 to remove a pet ");
-        System.out.println("Enter 5 to add a pet ");
-        System.out.println("Enter 6 to oil robotic pets ");
-        System.out.println("Enter 7 to maintain robotic pets ");
-        System.out.println("Enter 8 to walk all dogs");
+        System.out.println("Enter 4 to remove a pet");
+        System.out.println("Enter 5 to add a pet");
+        System.out.println("Enter 6 to oil robotic pets");
+        System.out.println("Enter 7 to maintain robotic pets");
+        System.out.println("Enter 8 to walk all RoboDogs");
+        System.out.println("Enter 9 to walk all Organic dogs");
         System.out.println("To leave the adoption agency, please type \"Quit\"");
         String userInput = inputScanner.nextLine();
         while (!userInput.equalsIgnoreCase("quit")) {
@@ -77,28 +78,37 @@ public class VirtualPetApplication {
                 shelter.tickAllPets();
             }
             if (userInput.equalsIgnoreCase("8")) {
-                if (shelter instanceof Walking){
-                    ((Walking)shelter).walk();
-                    shelter.tickAllPets();
-                }
+                for (VirtualPet petToWalk : shelter.retrievePets())
+                    if (petToWalk instanceof RoboDogs) {
+                        ((RoboDogs) petToWalk).walk();
+                        shelter.tickAllPets();
+                    }
+            }
+            if (userInput.equalsIgnoreCase("9")) {
+                for (VirtualPet petToWalk : shelter.retrievePets())
+                    if (petToWalk instanceof OrganicDog) {
+                        ((OrganicDog) petToWalk).walk();
+                        shelter.tickAllPets();
+                    }
 
-            }
-            for(VirtualPet petToDisplay : shelter.retrievePets()){
-                System.out.println(petToDisplay);
-            }
-            System.out.println("Enter 1 to feed the organic pets ");
-            System.out.println("Enter 2 to give water to the organic pets ");
-            System.out.println("Enter 3 to play with all the pets");
-            System.out.println("Enter 4 to remove a pet ");
-            System.out.println("Enter 5 to add a pet ");
-            System.out.println("Enter 6 to oil robotic pets ");
-            System.out.println("Enter 7 to maintain robotic pets ");
-            System.out.println("Enter 8 to walk all dogs");
-            userInput = inputScanner.nextLine();
+                for (VirtualPet petToDisplay : shelter.retrievePets()) {
+                    System.out.println(petToDisplay);
+                }
+                System.out.println("Enter 1 to feed the organic pets ");
+                System.out.println("Enter 2 to give water to the organic pets ");
+                System.out.println("Enter 3 to play with all the pets");
+                System.out.println("Enter 4 to remove a pet ");
+                System.out.println("Enter 5 to add a pet ");
+                System.out.println("Enter 6 to oil robotic pets ");
+                System.out.println("Enter 7 to maintain robotic pets ");
+                System.out.println("Enter 8 to walk all dogs");
+                System.out.println("Enter 9 to walk all Organic dogs");
+                userInput = inputScanner.nextLine();
             }
         }
 
     }
+}
 
 
 
